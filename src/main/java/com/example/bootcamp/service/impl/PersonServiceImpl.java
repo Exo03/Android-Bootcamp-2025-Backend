@@ -1,12 +1,10 @@
 package com.example.bootcamp.service.impl;
 
-import com.example.bootcamp.dto.PersonDTO;
-import com.example.bootcamp.dto.PersonGetDTO;
-import com.example.bootcamp.dto.PersonRegisterDTO;
-import com.example.bootcamp.dto.VolunteerCentreDTO;
+import com.example.bootcamp.dto.*;
 import com.example.bootcamp.entity.Authority;
 import com.example.bootcamp.entity.Person;
 import com.example.bootcamp.entity.VolunteerCentre;
+import com.example.bootcamp.exception.IncorrectPasswordException;
 import com.example.bootcamp.exception.PersonAlreadyExistException;
 import com.example.bootcamp.exception.PersonNotFoundException;
 import com.example.bootcamp.exception.VolunteerCentreNotFoundException;
@@ -19,6 +17,7 @@ import com.example.bootcamp.util.VolunteerCentreMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

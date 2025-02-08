@@ -1,5 +1,6 @@
 package com.example.bootcamp.exception.handler;
 
+import com.example.bootcamp.exception.IncorrectPasswordException;
 import com.example.bootcamp.exception.PersonAlreadyExistException;
 import com.example.bootcamp.exception.PersonNotFoundException;
 import com.example.bootcamp.exception.VolunteerCentreNotFoundException;
@@ -22,6 +23,11 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(PersonAlreadyExistException.class)
     public ResponseEntity<String> handlerPersonAlreadyExistException(PersonAlreadyExistException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(IncorrectPasswordException.class)
+    public ResponseEntity<String> handlerIncorrectPasswordException(IncorrectPasswordException e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
     }
 }
