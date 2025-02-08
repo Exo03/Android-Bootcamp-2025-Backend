@@ -27,8 +27,8 @@ public class Person implements UserDetails {
     private String password;
 
     @ManyToOne
-    @JoinColumn(name="volunteer_centre_id")
-    private VolunteerCentre volunteer;
+    @JoinColumn(name="volunteer_center_id")
+    private VolunteerCenter volunteer;
 
     @Column(name="Coordinate_x")
     private float coordinate_x;

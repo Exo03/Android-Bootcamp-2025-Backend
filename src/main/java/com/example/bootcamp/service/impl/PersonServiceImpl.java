@@ -3,21 +3,18 @@ package com.example.bootcamp.service.impl;
 import com.example.bootcamp.dto.*;
 import com.example.bootcamp.entity.Authority;
 import com.example.bootcamp.entity.Person;
-import com.example.bootcamp.entity.VolunteerCentre;
-import com.example.bootcamp.exception.IncorrectPasswordException;
+import com.example.bootcamp.entity.VolunteerCenter;
 import com.example.bootcamp.exception.PersonAlreadyExistException;
 import com.example.bootcamp.exception.PersonNotFoundException;
-import com.example.bootcamp.exception.VolunteerCentreNotFoundException;
+import com.example.bootcamp.exception.VolunteerCenterNotFoundException;
 import com.example.bootcamp.repository.AuthorityRepository;
 import com.example.bootcamp.repository.PersonRepository;
-import com.example.bootcamp.repository.VolunteerCentreRepository;
+import com.example.bootcamp.repository.VolunteerCenterRepository;
 import com.example.bootcamp.service.PersonService;
 import com.example.bootcamp.util.PersonMapper;
-import com.example.bootcamp.util.VolunteerCentreMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +28,7 @@ import java.util.stream.Collectors;
 public class PersonServiceImpl implements PersonService {
 
     private final PersonRepository personRepository;
-    private final VolunteerCentreRepository volunteerCentreRepository;
+    private final VolunteerCenterRepository volunteerCenterRepository;
     private final AuthorityRepository authorityRepository;
     private final PasswordEncoder passwordEncoder;
 
@@ -70,7 +67,7 @@ public class PersonServiceImpl implements PersonService {
         person.setUsername(dto.getUsername());
         person.setEmail(dto.getEmail());
         person.setPassword(passwordEncoder.encode(dto.getPassword()));
-        person.setVolunteer(volunteerCentreRepository.getById(1L));
+        person.setVolunteer(volunteerCenterRepository.getById(1L));
         person.setAuthorities(Set.of(roleUser.get()));
 
         return PersonMapper.convertToDto(personRepository.save(person));
@@ -91,7 +88,7 @@ public class PersonServiceImpl implements PersonService {
         person.setCoordinate_x(dto.getCoordinate_x());
         person.setCoordinate_y(dto.getCoordinate_y());
 
-        Optional<VolunteerCentre> optionalVolunteerCentre = volunteerCentreRepository.findByName(dto.getVolunteer());
+        Optional<VolunteerCenter> optionalVolunteerCentre = volunteerCenterRepository.findByName(dto.getVolunteer());
         optionalVolunteerCentre.ifPresent(person::setVolunteer);
 
         return PersonMapper.convertToDto(personRepository.save(person));
@@ -119,13 +116,13 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public PersonDTO registerAtVolunteerCenter(Long id,String name) {
-        Person person = personRepository.findById(id)
+    public PersonDTO registerAtVolunteerCenter(String username,String name) {
+        Person person = personRepository.findByUsername(username)
                 .orElseThrow(() -> new PersonNotFoundException("User not found"));
 
-        Optional<VolunteerCentre> optionalVolunteerCentre = volunteerCentreRepository.findByName(name);
+        Optional<VolunteerCenter> optionalVolunteerCentre = volunteerCenterRepository.findByName(name);
         if(optionalVolunteerCentre.isEmpty())
-            throw new VolunteerCentreNotFoundException("Volunteer centre with name" + name + "not found");
+            throw new VolunteerCenterNotFoundException("Volunteer centre with name" + name + "not found");
 
         person.setVolunteer(optionalVolunteerCentre.get());
 

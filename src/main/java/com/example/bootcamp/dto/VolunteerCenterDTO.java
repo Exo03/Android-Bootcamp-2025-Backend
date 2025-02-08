@@ -3,7 +3,7 @@ package com.example.bootcamp.dto;
 import lombok.Data;
 
 @Data
-public class VolunteerCentreDTO {
+public class VolunteerCenterDTO {
     private String name;
     private String description;
     private float coordinate_x;

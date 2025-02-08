@@ -27,8 +27,8 @@
             <column name="Email" type="VARCHAR(100)">
                 <constraints nullable="false" unique="true"/>
             </column>
-            <column name="volunteer_centre_id" type="BIGINT">
-                <constraints foreignKeyName="fk_user_volunteer_centre" referencedTableName="volunteer" referencedColumnNames="id"/>
+            <column name="volunteer_center_id" type="BIGINT">
+                <constraints foreignKeyName="fk_user_volunteer_center" referencedTableName="volunteer" referencedColumnNames="id"/>
             </column>
             <column name="Coordinate_x" type="FLOAT">
                 <constraints nullable="false"/>

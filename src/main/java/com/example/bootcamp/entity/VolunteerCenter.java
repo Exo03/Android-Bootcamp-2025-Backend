@@ -3,12 +3,11 @@ package com.example.bootcamp.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Entity
 @Table(name="volunteer")
-public class VolunteerCentre {
+public class VolunteerCenter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

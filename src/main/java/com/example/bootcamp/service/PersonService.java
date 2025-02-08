@@ -24,7 +24,7 @@ public interface PersonService {
 
     Page<PersonDTO> getAllPersonPaginated(Pageable pageable);
 
-    PersonDTO registerAtVolunteerCenter(Long id, String name);
+    PersonDTO registerAtVolunteerCenter(String username, String name);
 
     List<PersonDTO> getAllPersonAtCenter(Long volunteerId);
 }

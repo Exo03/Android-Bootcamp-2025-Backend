@@ -72,8 +72,8 @@ public class PersonController {
         return ResponseEntity.ok(personService.getAllPersonPaginated(pageable));
     }
 
-    @PutMapping("volunteer/add/{id}/{name}")
-    public ResponseEntity<PersonDTO> registerAtVolunteerCentre(@PathVariable long id, @PathVariable String name){
-        return ResponseEntity.ok(personService.registerAtVolunteerCenter(id, name));
+    @PutMapping("volunteer/add/{username}/{name}")
+    public ResponseEntity<PersonDTO> registerAtVolunteerCentre(@PathVariable String username, @PathVariable String name){
+        return ResponseEntity.ok(personService.registerAtVolunteerCenter(username, name));
     }
 }

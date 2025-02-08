@@ -4,11 +4,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog-ext.xsd">
 
-    <include file="db.changelog/1.0/2025-01-30-0001-volunteercentre.xml"/>
+    <include file="db.changelog/1.0/2025-01-30-0001-volunteercenter.xml"/>
     <include file="db.changelog/1.0/2025-01-30-0002-authority.xml"/>
     <include file="db.changelog/1.0/2025-01-30-0003-person.xml"/>
 
-    <include file="db.changelog/data/2025-01-30-0001-volunteercentre-data.xml"/>
+    <include file="db.changelog/data/2025-01-30-0001-volunteercenter-data.xml"/>
     <include file="db.changelog/data/2025-01-30-0002-authority-data.xml"/>
     <include file="db.changelog/data/2025-01-30-0003-person-data.xml"/>
 
