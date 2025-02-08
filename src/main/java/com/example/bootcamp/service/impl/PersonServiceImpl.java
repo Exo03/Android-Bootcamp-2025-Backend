@@ -87,7 +87,6 @@ public class PersonServiceImpl implements PersonService {
         person.setName(dto.getName());
         person.setUsername(dto.getUsername());
         person.setEmail(dto.getEmail());
-        person.setPhone(dto.getPhone());
         person.setPhotoUrl(dto.getPhotoUrl());
         person.setCoordinate_x(dto.getCoordinate_x());
         person.setCoordinate_y(dto.getCoordinate_y());

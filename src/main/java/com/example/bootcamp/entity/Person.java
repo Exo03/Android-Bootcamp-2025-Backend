@@ -26,9 +26,6 @@ public class Person implements UserDetails {
     @Column(name="Password")
     private String password;
 
-    @Column(name="Phone")
-    private int phone;
-
     @ManyToOne
     @JoinColumn(name="volunteer_centre_id")
     private VolunteerCentre volunteer;
