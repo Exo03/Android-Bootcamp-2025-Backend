@@ -12,9 +12,6 @@ public class PersonMapper {
         personDTO.setName(person.getName());
         personDTO.setUsername(person.getUsername());
         personDTO.setEmail(person.getEmail());
-        personDTO.setPhotoUrl(person.getPhotoUrl());
-        personDTO.setCoordinate_x(person.getCoordinate_x());
-        personDTO.setCoordinate_y(person.getCoordinate_y());
         personDTO.setVolunteer(person.getVolunteer().getName());
         return personDTO;
     }

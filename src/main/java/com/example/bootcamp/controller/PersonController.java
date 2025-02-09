@@ -52,9 +52,9 @@ public class PersonController {
         return ResponseEntity.ok(personService.getPersonByUsername(authentication.getName()));
     }
 
-    @PutMapping("/update/{id}")
-    public ResponseEntity<PersonDTO> updatePerson(@PathVariable long id, @RequestBody PersonDTO personDTO) {
-        return ResponseEntity.ok(personService.updatePerson(id, personDTO));
+    @PutMapping("/update/{username}")
+    public ResponseEntity<PersonDTO> updatePerson(@PathVariable String username, @RequestBody PersonRegisterDTO personDTO) {
+        return ResponseEntity.ok(personService.updatePerson(username, personDTO));
     }
 
     @DeleteMapping("/delete/{id}")

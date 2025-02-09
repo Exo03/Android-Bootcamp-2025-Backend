@@ -74,8 +74,8 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public PersonDTO updatePerson(Long id, PersonDTO dto) {
-        Person person = personRepository.findById(id)
+    public PersonDTO updatePerson(String username, PersonRegisterDTO dto) {
+        Person person = personRepository.findByUsername(username)
                 .orElseThrow(() -> new PersonNotFoundException("User not found!"));
 
         if(personRepository.findByUsername(dto.getUsername()).isPresent())
@@ -84,12 +84,7 @@ public class PersonServiceImpl implements PersonService {
         person.setName(dto.getName());
         person.setUsername(dto.getUsername());
         person.setEmail(dto.getEmail());
-        person.setPhotoUrl(dto.getPhotoUrl());
-        person.setCoordinate_x(dto.getCoordinate_x());
-        person.setCoordinate_y(dto.getCoordinate_y());
-
-        Optional<VolunteerCenter> optionalVolunteerCentre = volunteerCenterRepository.findByName(dto.getVolunteer());
-        optionalVolunteerCentre.ifPresent(person::setVolunteer);
+        person.setPassword(passwordEncoder.encode(dto.getPassword()));
 
         return PersonMapper.convertToDto(personRepository.save(person));
     }

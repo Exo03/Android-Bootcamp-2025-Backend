@@ -8,7 +8,4 @@ public class PersonDTO {
     private String username;
     private String email;
     private String volunteer;
-    private String photoUrl;
-    private float coordinate_x;
-    private float coordinate_y;
 }

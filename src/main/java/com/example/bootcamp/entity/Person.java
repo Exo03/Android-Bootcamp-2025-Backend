@@ -30,15 +30,6 @@ public class Person implements UserDetails {
     @JoinColumn(name="volunteer_center_id")
     private VolunteerCenter volunteer;
 
-    @Column(name="Coordinate_x")
-    private float coordinate_x;
-
-    @Column(name="Coordinate_y")
-    private float coordinate_y;
-
-    @Column(name="Photo_url")
-    private String photoUrl;
-
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Authority> authorities;
 

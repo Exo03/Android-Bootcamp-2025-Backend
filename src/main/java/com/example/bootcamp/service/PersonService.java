@@ -16,7 +16,7 @@ public interface PersonService {
 
     PersonDTO createPerson(PersonRegisterDTO dto);
 
-    PersonDTO updatePerson(Long id, PersonDTO dto);
+    PersonDTO updatePerson(String username, PersonRegisterDTO dto);
 
     void deletePerson(Long id);
 
