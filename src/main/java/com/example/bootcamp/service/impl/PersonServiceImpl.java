@@ -59,6 +59,9 @@ public class PersonServiceImpl implements PersonService {
             throw new PersonAlreadyExistException("Username already exists");
         }
 
+        if(personRepository.findByEmail(dto.getEmail()).isPresent())
+            throw new PersonAlreadyExistException("Email already exist");
+
         Optional<Authority> roleUser = authorityRepository.findByAuthority("ROLE_USER");
         if(roleUser.isEmpty()) throw new RuntimeException("Authority not found");
 
