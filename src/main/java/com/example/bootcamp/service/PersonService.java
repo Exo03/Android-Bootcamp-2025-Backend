@@ -18,7 +18,7 @@ public interface PersonService {
 
     PersonDTO updatePerson(String username, PersonRegisterDTO dto);
 
-    void deletePerson(Long id);
+    void deletePerson(String username);
 
     PersonDTO getPersonByUsername(String username);
 

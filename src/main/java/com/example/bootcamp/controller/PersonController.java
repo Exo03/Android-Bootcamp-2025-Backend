@@ -31,9 +31,9 @@ public class PersonController {
         return personService.getAllPersonsName();
     }
 
-    @GetMapping("/info/{id}")
-    public ResponseEntity<PersonDTO> getPersonById(@PathVariable long id) {
-        return ResponseEntity.ok(personService.getPersonById(id));
+    @GetMapping("/info/{username}")
+    public ResponseEntity<PersonDTO> getPersonById(@PathVariable String username) {
+        return ResponseEntity.ok(personService.getPersonByUsername(username));
     }
 
     @PostMapping("/register")
@@ -57,9 +57,9 @@ public class PersonController {
         return ResponseEntity.ok(personService.updatePerson(username, personDTO));
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deletePerson(@PathVariable long id){
-        personService.deletePerson(id);
+    @DeleteMapping("/delete/{username}")
+    public ResponseEntity<Void> deletePerson(@PathVariable String username){
+        personService.deletePerson(username);
         return ResponseEntity.noContent().build();
     }
 

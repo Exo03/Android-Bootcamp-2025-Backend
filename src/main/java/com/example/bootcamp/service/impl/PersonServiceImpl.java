@@ -90,8 +90,11 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public void deletePerson(Long id) {
-        personRepository.deleteById(id);
+    public void deletePerson(String username) {
+        Person person = personRepository.findByUsername(username)
+                .orElseThrow(() -> new PersonNotFoundException("User with username: " + username + " not found"));
+
+        personRepository.deleteById(person.getId());
     }
 
     @Override
