@@ -1,3 +1,6 @@
 Name;Username;Password;Email;volunteer_center_id
-Vol1;vol_vol;$2a$12$nbnBWFJruok.ApwpD5Qele2kHLoXL08x0/pZi1y9sxLaqNjfujW6O;vol1@gmail.com;1
-Adm1;adm_adm;$2a$12$nbnBWFJruok.ApwpD5Qele2kHLoXL08x0/pZi1y9sxLaqNjfujW6O;adm1@gmail.com;1
+Ivan;vol_vol;$2a$12$nbnBWFJruok.ApwpD5Qele2kHLoXL08x0/pZi1y9sxLaqNjfujW6O;vol1@gmail.com;1
+Andrey;adm_adm;$2a$12$nbnBWFJruok.ApwpD5Qele2kHLoXL08x0/pZi1y9sxLaqNjfujW6O;adm1@gmail.com;1
+Vasya;vas1;$2a$12$nbnBWFJruok.ApwpD5Qele2kHLoXL08x0/pZi1y9sxLaqNjfujW6O;vas@gmail.com;1
+Anya;an1;$2a$12$nbnBWFJruok.ApwpD5Qele2kHLoXL08x0/pZi1y9sxLaqNjfujW6O;anya@gmail.com;1
+Petya;pet1;$2a$12$nbnBWFJruok.ApwpD5Qele2kHLoXL08x0/pZi1y9sxLaqNjfujW6O;petya@gmail.com;1
